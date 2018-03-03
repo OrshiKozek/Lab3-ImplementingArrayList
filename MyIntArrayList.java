@@ -22,13 +22,6 @@ class MyIntArrayList{
 	}
 
 	public void addInteger(int i2){
-		// This is what we had before
-		// for(int i = list.length-1; i > 0; i--) {
-		// 	 list[i] = list[i-1];
-		// 	}
-		// list[list.length-1] = i2;
-
-		//this is what I changed- it works
 		for(int i = 0; i < list.length-1; i++) {
 			list[i] = list[i+1];
 			}
@@ -36,20 +29,44 @@ class MyIntArrayList{
 	}
 		
 	public void addInteger(int index, int number){
-		for(int i = 0; i < index; i++) {
-			list[i] = list[i+1];
-			}
-		list[index] = number;
+		if (checkIndex(index) == true) {
+			for(int i = 0; i < index; i++) {
+				list[i] = list[i+1];
+				}
+			list[index] = number;
+		}
 	}
 
 
 
-	public void removeInteger(){
-
+	public void removeInteger(int index){
+		if (checkIndex(index) == true) {
+			list[index] = 0;
+		}
 	}
 
-	public void setInteger(){
+	public void setInteger(int index, int newNumber){
+		if (checkIndex(index) == true) {
+			list[index] = newNumber;
+		}
+	}
 
+	public int getNumAtPos(int index){
+		if (checkIndex(index) == true) {
+			return list[index];
+		}
+
+		return -1;
+	}
+
+	public boolean checkIndex(int index) {
+		if (index >= list.length || index < 0) {
+			System.out.println("That is an invalid index");
+			return false;
+		}
+		else {
+			return true;
+		}
 	}
 
 }
