@@ -2,9 +2,6 @@
 Created by Bio Owens and Orshi Kozek
 */
 
-
-
-
 import java.util.*;
 import java.lang.*;
 class MyIntArrayList{
@@ -48,13 +45,15 @@ class MyIntArrayList{
 		
 	public void addInteger(int index, int number){
 		if (checkIndex(index) == true) {
-			for(int i = 0; i < index; i++) {
-				list[i] = list[i+1];
+			if (index != 0) {
+				for(int i = 0; i <= index; i++) {
+						list[i] = list[i+1];
+					}
 				}
+			}
 			list[index] = number;
-
-		}	
-	}
+		}
+	
 
 	public void removeInteger(int index){
 		if (checkIndex(index) == true) {
