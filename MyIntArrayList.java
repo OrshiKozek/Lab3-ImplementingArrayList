@@ -2,9 +2,6 @@
 Created by Bio Owens and Orshi Kozek
 */
 
-
-
-
 import java.util.*;
 import java.lang.*;
 class MyIntArrayList{
@@ -85,5 +82,5 @@ class MyIntArrayList{
 			return true;
 		}
 	}
-
+	
 }
