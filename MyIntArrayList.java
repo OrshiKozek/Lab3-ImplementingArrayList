@@ -1,3 +1,10 @@
+/*
+Created by Bio Owens and Orshi Kozek
+*/
+
+
+
+
 import java.util.*;
 import java.lang.*;
 class MyIntArrayList{
@@ -20,7 +27,12 @@ class MyIntArrayList{
 		String tempReturnString = "[";
 
 		for(int index = 0; index < list.length; index++) {
+			if(index < list.length-1){
 			tempReturnString += list[index] + ", ";
+			}
+			else{
+				tempReturnString += list[index];
+			}
 		}
 
 		tempReturnString += "]";
@@ -63,7 +75,7 @@ class MyIntArrayList{
 		return -1;
 	}
 
-	public boolean checkIndex(int index) {
+	private boolean checkIndex(int index) {
 
 		if (index >= list.length || index < 0) {
 			System.out.println("That is an invalid index");
