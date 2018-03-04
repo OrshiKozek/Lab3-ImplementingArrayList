@@ -6,7 +6,6 @@ class MyIntArrayList{
 	private int listSize = 0;
 
 	public MyIntArrayList(){
-
 		for(int index = 0; index < list.length; index++){
 			list[index] = 0;
 		}
@@ -41,10 +40,9 @@ class MyIntArrayList{
 				list[i] = list[i+1];
 				}
 			list[index] = number;
+
 		}	
 	}
-
-
 
 	public void removeInteger(int index){
 		if (checkIndex(index) == true) {
@@ -62,11 +60,11 @@ class MyIntArrayList{
 		if (checkIndex(index) == true) {
 			return list[index];
 		}
-
 		return -1;
 	}
 
-	private boolean checkIndex(int index) {
+	public boolean checkIndex(int index) {
+
 		if (index >= list.length || index < 0) {
 			System.out.println("That is an invalid index");
 			return false;
