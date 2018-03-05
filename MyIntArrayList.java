@@ -6,13 +6,12 @@ import java.util.*;
 import java.lang.*;
 class MyIntArrayList{
 
-	// private int[] list = new int[10];
+	
 	private Num[] list = new Num[10];
 	private int listSize = 0;
 
 	public MyIntArrayList(){
 		for(int index = 0; index < list.length; index++){
-			// list[index] = 0;
 			Num newNum = new Num(0);
 			list[index] = newNum;
 		}
@@ -20,9 +19,7 @@ class MyIntArrayList{
 
 	public MyIntArrayList(int listSize){
 		this.listSize = listSize;
-		// list = new int[listSize];
 		list = new Num[listSize];
-
 	}
 
 	public String toString() {
@@ -45,10 +42,8 @@ class MyIntArrayList{
 		Num newNum = new Num(i2);
 		for(int i = 0; i < list.length-1; i++) {
 			list[i] = list[i+1];
-			}
-		// list[list.length-1] = i2;
+		}
 		list[list.length-1] = newNum;
-
 	}
 		
 	public void addInteger(int index, int number){
@@ -57,40 +52,32 @@ class MyIntArrayList{
 			for(int i = list.length-1; i > index; i--) {
 				list[i] = list[i-1];
 			}
-			// list[index] = number;
 			list[index] = newNum;
-			}
 		}
+	}
 	
 
 	public void removeInteger(int index){
 		if (checkIndex(index) == true) {
-			// list[index] = 0;
 			list[index].setValue(0);
-
 		}
 	}
 
 	public void setInteger(int index, int newNumber){
 		Num newNum = new Num(newNumber);
 		if (checkIndex(index) == true) {
-			// list[index] = newNumber;
 			list[index] = newNum;
-
 		}
 	}
 
 	public int getNumAtPos(int index){
 		if (checkIndex(index) == true) {
-			// return list[index];
 			return list[index].getValue();
-
 		}
 		return -1;
 	}
 
 	private boolean checkIndex(int index) {
-
 		if (index >= list.length || index < 0) {
 			System.out.println("That is an invalid index");
 			return false;
