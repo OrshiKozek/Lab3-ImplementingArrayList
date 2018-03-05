@@ -54,11 +54,9 @@ class MyIntArrayList{
 	public void addInteger(int index, int number){
 		Num newNum = new Num(number);
 		if (checkIndex(index) == true) {
-			if (index != 0) {
-				for(int i = 0; i <= index; i++) {
-					list[i] = list[i+1];
+				for(int i = list.length-1; i > index; i--) {
+					list[i] = list[i-1];
 				}
-			}
 			// list[index] = number;
 			list[index] = newNum;
 			}
